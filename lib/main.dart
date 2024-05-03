@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:myapp/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:myapp/src/utils/theme.dart';
 
 void main() {
@@ -11,27 +13,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme:TAppTheme.lighttheme,
       darkTheme: TAppTheme.darttheme,
       themeMode: ThemeMode.system,
-      home:AppHome()
-    );
-  }
-}
-
-class AppHome extends StatelessWidget {
-  const AppHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("My App Flutter"),
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: () {  },
-      child: Icon(Icons.connecting_airports_sharp),),
+      home: SplashScreen()
     );
   }
 }
